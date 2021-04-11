@@ -1,7 +1,8 @@
+import Master from './pages/Master';
+
 function App() {
   return (
-    <div className="App">
-    </div>
+      <Master/>
   );
 }
 
