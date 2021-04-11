@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import '../css/styles.css'
 
 class Cell extends React.Component {

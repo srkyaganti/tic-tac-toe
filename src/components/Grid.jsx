@@ -3,7 +3,7 @@ import GridRow from './GridRow';
 
 class Grid extends React.Component {    
     render() {
-        const { gridSize, playerCount, markings } = this.props;
+        const { gridSize } = this.props;
         
         const rows = [];
         

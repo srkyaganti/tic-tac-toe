@@ -42,9 +42,9 @@ class Master extends React.Component {
 
         if (row < gridSize && column < gridSize) {
             const colorCode = this.state.markings[row * gridSize + column];
-            return colorCode == this.state.defaultCellColor
+            return colorCode === this.state.defaultCellColor
         } else {
-            throw 'Invalid cell position provided'
+            throw new Error('Invalid cell position provided')
         }
     }
 
@@ -73,7 +73,7 @@ class Master extends React.Component {
         for (let i = 0; i < gridSize; i++) {
             const firstColor = this.state.markings[i * gridSize];
     
-            if (firstColor != currentPlayerColor) {
+            if (firstColor !== currentPlayerColor) {
                 continue;
             }
 
@@ -95,7 +95,7 @@ class Master extends React.Component {
         for (let i = 0; i < gridSize; i++) {
             const firstColor = this.state.markings[i];
             
-            if (firstColor != currentPlayerColor) {
+            if (firstColor !== currentPlayerColor) {
                 continue;
             }
 
@@ -115,11 +115,11 @@ class Master extends React.Component {
 
         // Checking from top left to bottom right
         let firstColor = this.state.markings[0];
-        if (firstColor == currentPlayerColor) {
+        if (firstColor === currentPlayerColor) {
             let streakMaintained = true;
             
             for (let i = 1; i < gridSize; i++) {
-                if (this.state.markings[i * (gridSize + 1)] != firstColor) {
+                if (this.state.markings[i * (gridSize + 1)] !== firstColor) {
                     streakMaintained = false;
                     break;
                 }    
@@ -131,11 +131,11 @@ class Master extends React.Component {
 
         // Checking from bottom left to top right
         firstColor = this.state.markings[gridSize - 1];
-        if (firstColor == currentPlayerColor) {
+        if (firstColor === currentPlayerColor) {
             let streakMaintained = true;
 
             for (let i = 1; i < gridSize; i++) {
-                if (this.state.markings[i * gridSize + (gridSize - 1 -i)] != firstColor) {
+                if (this.state.markings[i * gridSize + (gridSize - 1 -i)] !== firstColor) {
                     streakMaintained = false;
                     break;
                 }
